@@ -1,0 +1,25 @@
+{
+  "name": "copa-nlw-back",
+  "version": "1.0.0",
+  "description": "Projeto backend para copa-nlw",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luskas8/copa-nlw-back.git"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "rest",
+    "solid"
+  ],
+  "author": "luskas8",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luskas8/copa-nlw-back/issues"
+  },
+  "homepage": "https://github.com/luskas8/copa-nlw-back#readme"
+}
