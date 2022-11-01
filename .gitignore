@@ -143,4 +143,7 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
+.DS_Store
 .tool-versions
+.prisma
+prisma/db/*.db
