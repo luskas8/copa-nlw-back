@@ -2,8 +2,10 @@
   "name": "copa-nlw-back",
   "version": "1.0.0",
   "description": "Projeto backend para copa-nlw",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "dev": "cross-env NODE_ENV=dev tsx watch src/server.ts",
+    "start": "cross-env NODE_ENV=prod",
     "test": "npm test"
   },
   "repository": {
@@ -21,5 +23,22 @@
   "bugs": {
     "url": "https://github.com/luskas8/copa-nlw-back/issues"
   },
-  "homepage": "https://github.com/luskas8/copa-nlw-back#readme"
+  "homepage": "https://github.com/luskas8/copa-nlw-back#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.26.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "tsx": "^3.11.0",
+    "typescript": "^4.8.4",
+    "typescritp": "^1.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2"
+  }
 }
