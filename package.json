@@ -41,6 +41,7 @@
     "typescritp": "^1.0.0"
   },
   "dependencies": {
+    "@fastify/cors": "^8.1.1",
     "@prisma/client": "^4.5.0",
     "dotenv": "^16.0.3",
     "fastify": "^4.9.2"
