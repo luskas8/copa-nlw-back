@@ -146,4 +146,4 @@ dist
 .DS_Store
 .tool-versions
 .prisma
-prisma/db/*.db
+prisma/*.db
