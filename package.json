@@ -8,6 +8,9 @@
     "start": "cross-env NODE_ENV=prod",
     "test": "npm test"
   },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luskas8/copa-nlw-back.git"
