@@ -2,15 +2,15 @@ import cors from '@fastify/cors'
 import { PrismaClient } from '@prisma/client'
 import { config } from 'dotenv'
 import Fastify, { FastifyReply, FastifyRequest } from 'fastify'
-import ShortUniqueId from "short-unique-id"
-import { z } from "zod"
+import ShortUniqueId from 'short-unique-id'
+import { z } from 'zod'
 config()
 
 const prisma = new PrismaClient({
   log: ['query']
 })
 
-async function bootstrap() {
+async function bootstrap () {
   const fastify = Fastify({
     logger: process.env.NODE_ENV === 'dev'
   })
@@ -19,9 +19,9 @@ async function bootstrap() {
     origin: true
   })
 
-  fastify.get('/pools/count', async () => {
-    const pools = await prisma.pool.count()
-    return { count: pools }
+  fastify.get('/polls/count', async () => {
+    const polls = await prisma.poll.count()
+    return { count: polls }
   })
 
   fastify.get('/users/count', async () => {
@@ -34,18 +34,18 @@ async function bootstrap() {
     return { count: guesses }
   })
 
-  fastify.post('/pools', async (request: FastifyRequest, reply: FastifyReply) => {
-    const createPoolBody = z.object({
-      title: z.string(),
+  fastify.post('/polls', async (request: FastifyRequest, reply: FastifyReply) => {
+    const createPollBody = z.object({
+      title: z.string()
     })
     const generate = new ShortUniqueId({ length: 6 })
     const code = String(generate()).toUpperCase()
-    const { title } = createPoolBody.parse(request.body);
+    const { title } = createPollBody.parse(request.body)
 
-    await prisma.pool.create({
+    await prisma.poll.create({
       data: {
         title,
-        code,
+        code
       }
     })
 
